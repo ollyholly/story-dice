@@ -2,6 +2,7 @@ import { Container, Box, Typography, Button, Card } from '@mui/material';
 import data from './Assets/Dice.json';
 import { useState, useEffect } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 
 const theme = createTheme({
   palette: {
@@ -59,7 +60,15 @@ const App = () => {
           ))}
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Button onClick={rollDice} variant="contained" color="blacky" size="large">
+          <Button
+            onClick={rollDice}
+            variant="contained"
+            color="blacky"
+            size="large"
+            component={motion.div}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+          >
             roll me
           </Button>
         </Box>
